@@ -46,8 +46,8 @@ userInfo : {
     trim : true
 },
 
-
-});
+},{timestamps : true}
+);
 
 userSchema.virtual("password")
     .set(function(password)

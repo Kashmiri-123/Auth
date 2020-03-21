@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 var categorySchema = new mongoose.Schema({
     name : {
         type : String,
-        trime : true,
+        trim : true,
         required : true,
         maxlength : 32,
         unique : true
