@@ -26,7 +26,9 @@ router.get("/testroute", isSignedIn,(req,res) => {
     res.json(req.auth); //userProperty : "auth"
 })
 
+//google login
 router.post("/googlelogin", googleController)
+
 router.get("/email", handleEmailService)
 
 

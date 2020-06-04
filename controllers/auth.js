@@ -181,6 +181,8 @@ exports.googleController = (req, res) => {
       }))
 };
 
+
+
 exports.handleEmailService = (req, res) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   const OTP = Math.floor(Math.random()*9999999);
