@@ -126,16 +126,17 @@ exports.isAdmin = (req,res,next) => {
 }
 
 
-const client = new OAuth2Client(process.env.GOOGLE_CLIENT);
 // Google Login
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT);
+
 exports.googleController = (req, res) => {
   // console.log("okay...")
   const { idToken } = req.body;
-    // console.log(idToken)
+  
   client
     .verifyIdToken({ idToken, audience: process.env.GOOGLE_CLIENT })
     .then(response => {
-      console.log('GOOGLE LOGIN RESPONSE',response)
+      // console.log('GOOGLE LOGIN RESPONSE',response)
 
       const { email_verified, name, email } = response.payload;
 
@@ -211,7 +212,7 @@ exports.handleEmailService = (req, res) => {
 
 
 
-
+//customed middlewares
 exports.forgotPasswordValidator = [
   check('email')
       .not()
