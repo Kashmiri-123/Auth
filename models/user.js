@@ -36,6 +36,11 @@ role :{
     default : 0
 },
 
+resetPasswordLink: {
+    data: String,
+    default: ''
+},
+
 purchases : {
     type : Array,
     default: []

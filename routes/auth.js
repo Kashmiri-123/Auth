@@ -3,7 +3,10 @@ var router = express.Router()
 const { check, validationResult } = require('express-validator');
 
 const {signout, googleController} = require("../controllers/auth")
-const {signup,signin,isSignedIn, handleEmailService} = require("../controllers/auth")
+const {signup,signin,isSignedIn, handleEmailService,forgotPasswordController, forgotPasswordValidator } = require("../controllers/auth")
+
+
+
 
 router.post("/signup", 
     [//middleware
@@ -26,10 +29,13 @@ router.get("/testroute", isSignedIn,(req,res) => {
     res.json(req.auth); //userProperty : "auth"
 })
 
-//google login
-router.post("/googlelogin", googleController)
 
 router.get("/email", handleEmailService)
+router.put('/forgotpassword', forgotPasswordValidator, forgotPasswordController);
 
+
+
+//google login
+router.post("/googlelogin", googleController)
 
 module.exports = router;
