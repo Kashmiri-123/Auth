@@ -21,7 +21,7 @@
     "formidable": "^1.2.1",
     "google-auth-library": "^6.0.1",
     "googleapis": "^52.0.0",
-    "i": "^0.3.6",
+    "i": "^0.3.7",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "mongoose": "^5.7.7",
